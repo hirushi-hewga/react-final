@@ -1,32 +1,41 @@
-import DarkModeIcon from '@mui/icons-material/DarkMode'
-import LightModeIcon from '@mui/icons-material/LightMode'
-import {AppBar, Box, IconButton, useTheme} from '@mui/material'
+// import DarkModeIcon from '@mui/icons-material/DarkMode'
+// import LightModeIcon from '@mui/icons-material/LightMode'
+// import {AppBar, Box, IconButton, useTheme} from '@mui/material'
 import {useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
 import useAction from '../../hooks/useAction'
+import {Button, Container, Nav, Navbar} from 'react-bootstrap'
+import {Sun, Moon} from 'react-bootstrap-icons'
+import {darkTheme, lightTheme} from '../../theming/themes'
 
-const Navbar = () => {
+const NavigationBar = () => {
     const {theme} = useSelector(state => state.theme)
     const {setTheme} = useAction()
-    const muiTheme = useTheme()
-    const textStyle = {color: muiTheme.palette.text.main}
+    const themeStyle = theme === 'dark' ? darkTheme : lightTheme
+    const textColor = themeStyle.palette.text.main
+
+    const linkStyle = {
+        color: textColor,
+        textDecoration: 'none'
+    }
 
     return (
-        <AppBar position='fixed' sx={{height: '60px'}}>
-            <Box sx={{display: 'flex', alignItems: 'center', height: '100%'}}>
-                <Box sx={{flexGrow: 8, display: 'flex', justifyContent: 'space-evenly', fontSize: "large", color: muiTheme.palette.text.main}}>
-                    <Link style={textStyle} to='/'>MainPage</Link>
-                </Box>
-                <Box sx={{flexGrow: 1, display: 'flex'}}>
-                    {theme === 'dark' ? <IconButton sx={textStyle} onClick={() => setTheme('light')}>
-                        <LightModeIcon />
-                    </IconButton> : <IconButton sx={textStyle} onClick={() => setTheme('dark')}>
-                        <DarkModeIcon/>
-                    </IconButton>}
-                </Box>
-            </Box>
-        </AppBar>
+        <Navbar sticky='top' className='min-vw-100 m-0' style={{height: '60px', backgroundColor: themeStyle.palette.primary.main}}>
+            <Container fluid className='ms-2 me-2' style={{height: '100%'}}>
+                <Navbar.Brand className='me-4' style={{color: textColor}} as={Link} to='/'>AutoQuest</Navbar.Brand>
+                <Container fluid>
+                    <Nav>
+                        <Nav.Link style={linkStyle} as={Link} to='/'>MainPage</Nav.Link>
+                    </Nav>
+                </Container>
+                {theme === 'dark' ? <Button style={{height: '40px', width: '40px', color: textColor, backgroundColor: themeStyle.palette.secondary.main, borderColor: themeStyle.palette.primary.light}} onClick={() => setTheme('light')}>
+                    <Sun/>
+                </Button> : <Button style={{height: '40px', width: '40px', color: textColor, backgroundColor: themeStyle.palette.secondary.main, borderColor: themeStyle.palette.primary.light}} onClick={() => setTheme('dark')}>
+                    <Moon/>
+                </Button>}
+            </Container>
+        </Navbar>
     )
 }
 
-export default Navbar
+export default NavigationBar

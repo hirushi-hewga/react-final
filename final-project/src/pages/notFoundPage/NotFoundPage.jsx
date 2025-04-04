@@ -1,10 +1,10 @@
-import {Box} from '@mui/material'
+// import {Box} from '@mui/material'
 
 const NotFoundPage = () => {
     return (
-        <Box>
+        // <Box>
             <h1>NotFoundPage</h1>
-        </Box>
+        // </Box>
     )
 }
 

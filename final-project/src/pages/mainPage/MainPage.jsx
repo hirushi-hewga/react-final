@@ -1,10 +1,10 @@
-import {Box} from '@mui/material'
+// import {Box} from '@mui/material'
 
 const MainPage = () => {
     return (
-        <Box>
+        // <Box>
             <h1>MainPage</h1>
-        </Box>
+        // </Box>
     )
 }
 
