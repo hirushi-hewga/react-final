@@ -1,10 +1,8 @@
-// import {Box} from '@mui/material'
+import CarsPage from "../carsPage/CarsPage"
 
 const MainPage = () => {
     return (
-        // <Box>
-            <h1>MainPage</h1>
-        // </Box>
+        <CarsPage/>
     )
 }
 

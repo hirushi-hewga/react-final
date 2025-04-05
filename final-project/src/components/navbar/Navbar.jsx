@@ -21,11 +21,11 @@ const NavigationBar = () => {
 
     return (
         <Navbar sticky='top' className='min-vw-100 m-0' style={{height: '60px', backgroundColor: themeStyle.palette.primary.main}}>
-            <Container fluid className='ms-2 me-2' style={{height: '100%'}}>
-                <Navbar.Brand className='me-4' style={{color: textColor}} as={Link} to='/'>AutoQuest</Navbar.Brand>
+            <Container fluid className='ms-4 me-4' style={{height: '100%'}}>
+                <Navbar.Brand className='me-4' style={{fontWeight: 'bold', color: textColor}} as={Link} to='/'>AutoQuest</Navbar.Brand>
                 <Container fluid>
                     <Nav>
-                        <Nav.Link style={linkStyle} as={Link} to='/'>MainPage</Nav.Link>
+                        <Nav.Link style={linkStyle} as={Link} to='/'>Автомобілі</Nav.Link>
                     </Nav>
                 </Container>
                 {theme === 'dark' ? <Button style={{height: '40px', width: '40px', color: textColor, backgroundColor: themeStyle.palette.secondary.main, borderColor: themeStyle.palette.primary.light}} onClick={() => setTheme('light')}>
