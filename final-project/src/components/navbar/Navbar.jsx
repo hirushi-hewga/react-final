@@ -25,7 +25,7 @@ const NavigationBar = () => {
                 <Navbar.Brand className='me-4' style={{fontWeight: 'bold', color: textColor}} as={Link} to='/'>AutoQuest</Navbar.Brand>
                 <Container fluid>
                     <Nav>
-                        <Nav.Link style={linkStyle} as={Link} to='/'>Автомобілі</Nav.Link>
+                        <Nav.Link style={linkStyle} as={Link} to='/cars'>Автомобілі</Nav.Link>
                     </Nav>
                 </Container>
                 {theme === 'dark' ? <Button style={{height: '40px', width: '40px', color: textColor, backgroundColor: themeStyle.palette.secondary.main, borderColor: themeStyle.palette.primary.light}} onClick={() => setTheme('light')}>

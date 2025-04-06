@@ -1,6 +1,8 @@
 import {combineReducers} from "@reduxjs/toolkit"
 import themeReducer from "./themeReducer/themeReducer"
+import carReducer from "./carReducer/carReducer"
 
 export const rootReducer = combineReducers({
-    theme: themeReducer
+    theme: themeReducer,
+    car: carReducer
 })

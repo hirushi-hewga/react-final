@@ -6,6 +6,7 @@ import './App.css'
 import {useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { darkTheme, lightTheme } from './theming/themes'
+import CarsPage from './pages/carsPage/CarsPage'
 // import { ThemeProvider } from '@mui/material/styles'
 
 const App = () => {
@@ -19,14 +20,15 @@ const App = () => {
   }, [])
 
   return (
-    // <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <Routes>
         <Route path='/' element={<DefaultLayout/>}>
           <Route index element={<MainPage/>}/>
+          <Route path='cars' element={<CarsPage/>}>
+
+          </Route>
           <Route path='*' element={<NotFoundPage/>}/>
         </Route>
       </Routes>
-    // </ThemeProvider>
   )
 }
 

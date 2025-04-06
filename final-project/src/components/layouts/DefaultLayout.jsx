@@ -14,9 +14,7 @@ const DefaultLayout = () => {
             <Container className='min-vh-100 d-flex flex-column m-0 p-0'>
                 <NavigationBar/>
                 <Container fluid className='flex-grow-1 min-vw-100' style={{borderBottom: `1px solid ${themeStyle.palette.secondary.light}`, borderTop: `1px solid ${themeStyle.palette.secondary.light}`, backgroundColor: themeStyle.palette.primary.dark}}>
-                    <Container style={{backgroundColor: themeStyle.palette.secondary.light}}>
-                        <Outlet/>
-                    </Container>
+                    <Outlet/>
                 </Container>
                 <Footer/>
             </Container>
