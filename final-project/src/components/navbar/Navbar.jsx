@@ -22,7 +22,7 @@ const NavigationBar = () => {
     return (
         <Navbar sticky='top' className='min-vw-100 m-0' style={{height: '60px', backgroundColor: themeStyle.palette.primary.main}}>
             <Container fluid className='ms-4 me-4' style={{height: '100%'}}>
-                <Navbar.Brand className='me-4' style={{fontWeight: 'bold', color: textColor}} as={Link} to='/'>AutoQuest</Navbar.Brand>
+                <Navbar.Brand className='me-4' style={{fontWeight: 'bold', color: textColor}} as={Link} to='/'>Home</Navbar.Brand>
                 <Container fluid>
                     <Nav>
                         <Nav.Link style={linkStyle} as={Link} to='/cars'>Автомобілі</Nav.Link>

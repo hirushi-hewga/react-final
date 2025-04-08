@@ -1,8 +1,10 @@
-import {combineReducers} from "@reduxjs/toolkit"
-import themeReducer from "./themeReducer/themeReducer"
-import carReducer from "./carReducer/carReducer"
+import {combineReducers} from '@reduxjs/toolkit'
+import themeReducer from './themeReducer/themeReducer'
+import userReducer from './userReducer/userReducer'
+import appointmentReducer from './appointmentReducer/appointmentReducer'
 
 export const rootReducer = combineReducers({
     theme: themeReducer,
-    car: carReducer
+    user: userReducer,
+    appointment: appointmentReducer
 })
